@@ -18,6 +18,22 @@ app.get("/", function (request, response) {
 
 //START OF YOUR CODE...
 
+
+//load the 'express' module which makes writing webservers easy
+const express = require('express');
+
+const app = express();
+
+app.get('/', function(request, response) {
+  response.send("hello Express world!")
+});
+
+//Start our server so that it listens for HTTP requests!
+app.listen(process.env.PORT);
+
+
+
+
 //...END OF YOUR CODE
 
 //You can use this function to pick one element at random from a given array
