@@ -18,21 +18,13 @@ app.get("/", function (request, response) {
 
 //START OF YOUR CODE...
 
-
-//load the 'express' module which makes writing webservers easy
-const express = require('express');
-
-const app = express();
-
-app.get('/', function(request, response) {
-  response.send("hello Express world!")
+app.get("/quotes", function (request, response) {
+  response.json(quotes);
 });
 
-//Start our server so that it listens for HTTP requests!
-app.listen(process.env.PORT);
-
-
-
+app.get("/quotes/random", function (request, response) {
+  response.json(pickFromArray(quotes));
+});
 
 //...END OF YOUR CODE
 
